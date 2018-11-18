@@ -1,0 +1,13 @@
+[Unit]
+Description=Gas Readings
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/python read.py
+WorkingDirectory=/home/markus/gas_readings
+StandardOutput=inherit
+StandardError=inherit
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
